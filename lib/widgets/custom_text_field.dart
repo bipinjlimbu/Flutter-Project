@@ -7,12 +7,14 @@ class CustomTextFormField extends StatelessWidget {
     required this.icon,
     required this.labelText,
     required this.hintText,
+    this.validator,
   });
 
   final TextEditingController controller;
   final IconData icon;
   final String labelText;
   final String hintText;
+  final String? Function(String?)? validator;
 
   @override
   Widget build(BuildContext context) {
