@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_project/pages/signup_page.dart';
+import 'package:flutter_project/widgets/app_navigation_bar.dart';
 import 'package:supabase_flutter/supabase_flutter.dart';
-import 'package:flutter_project/pages/home_page.dart';
 
 Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -23,7 +23,7 @@ class MyApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       home: Supabase.instance.client.auth.currentUser == null
           ? const SignUpPage()
-          : const HomePage(),
+          : const AppNavigationBar(),
     );
   }
 }
