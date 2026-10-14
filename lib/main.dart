@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_project/pages/signup_page.dart';
 import 'package:supabase_flutter/supabase_flutter.dart';
+import 'package:flutter_project/pages/home_page.dart';
 
 Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -20,7 +21,9 @@ class MyApp extends StatelessWidget {
       title: 'Flutter Project',
       theme: ThemeData(primarySwatch: Colors.blue),
       debugShowCheckedModeBanner: false,
-      home: SignUpPage(),
+      home: Supabase.instance.client.auth.currentUser == null
+          ? const SignUpPage()
+          : const HomePage(),
     );
   }
 }
