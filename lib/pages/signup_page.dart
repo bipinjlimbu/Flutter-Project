@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_project/pages/signin_page.dart';
 import 'package:flutter_project/widgets/custom_text_field.dart';
 import 'package:supabase_flutter/supabase_flutter.dart';
 import 'package:fluttertoast/fluttertoast.dart';
@@ -257,7 +258,11 @@ class _SignUpPageState extends State<SignUpPage> {
                           alignment: PlaceholderAlignment.middle,
                           child: GestureDetector(
                             onTap: () {
-                              // Navigate to the login page.
+                              Navigator.of(context).pushReplacement(
+                                MaterialPageRoute(
+                                  builder: (context) => const SignInPage(),
+                                ),
+                              );
                             },
                             child: const Text(
                               "Log In",
